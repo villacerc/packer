@@ -1,4 +1,5 @@
-import { ScrollView, StyleSheet, Text, View } from "react-native";
+import { ThemedText } from "@/components/themed-text";
+import { ScrollView, StyleSheet, View } from "react-native";
 
 const trips = [
   {
@@ -13,18 +14,16 @@ const trips = [
 export default function HomeScreen() {
   return (
     <View style={styles.container}>
-      <Text>Your Trips</Text>
+      <ThemedText type="title">Your Trips</ThemedText>
       <ScrollView style={styles.scrollView}>
         {Array(10)
           .fill("")
           .map((_, index) => (
             <View key={index} style={styles.card}>
-              <Text style={{ fontSize: 16, fontWeight: "bold" }}>
+              <ThemedText type="defaultSemiBold">
                 {trips[0].destination}
-              </Text>
-              <Text style={{ fontSize: 14, color: "#8c8c8c" }}>
-                {trips[0].dates}
-              </Text>
+              </ThemedText>
+              <ThemedText type="subtitle">{trips[0].dates}</ThemedText>
             </View>
           ))}
       </ScrollView>
