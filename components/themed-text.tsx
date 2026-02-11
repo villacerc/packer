@@ -6,6 +6,7 @@ export type ThemedTextProps = TextProps & {
   lightColor?: string;
   darkColor?: string;
   type?: "default" | "title" | "defaultSemiBold" | "subtitle" | "link";
+  muted?: boolean;
 };
 
 export function ThemedText({
@@ -13,9 +14,14 @@ export function ThemedText({
   lightColor,
   darkColor,
   type = "default",
+  muted = false,
   ...rest
 }: ThemedTextProps) {
-  const color = useThemeColor({ light: lightColor, dark: darkColor }, "text");
+  const colorName = muted ? "mutedText" : "text";
+  const color = useThemeColor(
+    { light: lightColor, dark: darkColor },
+    colorName,
+  );
 
   return (
     <Text

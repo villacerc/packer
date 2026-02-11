@@ -24,8 +24,8 @@ export function ThemedCard({
 
 const styles = StyleSheet.create({
   card: {
-    padding: 16, // Inner spacing
-    borderRadius: 12, // Rounded corners
+    padding: 30, // Inner spacing
+    borderRadius: 35, // Rounded corners
     shadowColor: "#000", // Shadow for iOS
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.2,
