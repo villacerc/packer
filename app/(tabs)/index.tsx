@@ -1,7 +1,7 @@
 import { ThemedCard } from "@/components/themed-card";
 import { ThemedText } from "@/components/themed-text";
 import { ThemedView } from "@/components/themed-view";
-import { ScrollView, StyleSheet } from "react-native";
+import { Image, ScrollView, StyleSheet, View } from "react-native";
 
 const trips = [
   {
@@ -27,10 +27,20 @@ export default function HomeScreen() {
           .fill("")
           .map((_, index) => (
             <ThemedCard key={index}>
-              <ThemedText type="subtitle" style={{ marginBottom: 3 }}>
-                {trips[0].destination}
-              </ThemedText>
-              <ThemedText muted>{trips[0].dates}</ThemedText>
+              <View style={{ flexDirection: "row", alignItems: "center" }}>
+                <Image
+                  source={require("@/assets/images/destination.png")}
+                  style={{ width: 65, height: 65, borderRadius: 100 }}
+                />
+                <View style={{ marginLeft: 20, flex: 1 }}>
+                  <ThemedText type="defaultBold">
+                    {trips[0].destination}
+                  </ThemedText>
+                  <ThemedText muted style={{ fontSize: 14 }}>
+                    {trips[0].dates}
+                  </ThemedText>
+                </View>
+              </View>
             </ThemedCard>
           ))}
       </ScrollView>
