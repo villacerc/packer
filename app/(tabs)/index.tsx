@@ -1,3 +1,4 @@
+import { ThemedCard } from "@/components/themed-card";
 import { ThemedText } from "@/components/themed-text";
 import { ThemedView } from "@/components/themed-view";
 import { ScrollView, StyleSheet } from "react-native";
@@ -20,12 +21,12 @@ export default function HomeScreen() {
         {Array(10)
           .fill("")
           .map((_, index) => (
-            <ThemedView key={index} style={styles.card}>
+            <ThemedCard key={index}>
               <ThemedText type="defaultSemiBold">
                 {trips[0].destination}
               </ThemedText>
               <ThemedText>{trips[0].dates}</ThemedText>
-            </ThemedView>
+            </ThemedCard>
           ))}
       </ScrollView>
     </ThemedView>
@@ -43,15 +44,5 @@ const styles = StyleSheet.create({
     overflow: "hidden",
     // justifyContent: "center", // Vertical alignment
     // alignItems: "center", // Horizontal alignment
-  },
-  card: {
-    padding: 16, // Inner spacing
-    borderRadius: 12, // Rounded corners
-    shadowColor: "#000", // Shadow for iOS
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.2,
-    shadowRadius: 4,
-    elevation: 4, // Shadow for Android
-    marginVertical: 8, // Space between cards
   },
 });
