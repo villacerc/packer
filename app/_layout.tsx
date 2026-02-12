@@ -1,15 +1,11 @@
-import { useColorScheme } from "@/hooks/use-color-scheme";
+import { ColorSchemeProvider } from "@/context/color-scheme-context";
+import { useAppScheme } from "@/hooks/use-app-scheme";
 import {
   Roboto_400Regular,
   Roboto_600SemiBold,
   Roboto_700Bold,
   useFonts,
 } from "@expo-google-fonts/roboto";
-import {
-  DarkTheme,
-  DefaultTheme,
-  ThemeProvider,
-} from "@react-navigation/native";
 import { Stack } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import "react-native-reanimated";
@@ -19,7 +15,7 @@ export const unstable_settings = {
 };
 
 export default function RootLayout() {
-  const colorScheme = useColorScheme();
+  const { scheme: colorScheme } = useAppScheme();
   const [fontsLoaded] = useFonts({
     Roboto_400Regular,
     Roboto_600SemiBold,
@@ -31,7 +27,7 @@ export default function RootLayout() {
   }
 
   return (
-    <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
+    <ColorSchemeProvider>
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen
@@ -40,6 +36,6 @@ export default function RootLayout() {
         />
       </Stack>
       <StatusBar style="auto" />
-    </ThemeProvider>
+    </ColorSchemeProvider>
   );
 }
