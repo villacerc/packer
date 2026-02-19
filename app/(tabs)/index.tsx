@@ -1,7 +1,9 @@
 import { ThemedCard } from "@/components/themed-card";
 import { ThemedText } from "@/components/themed-text";
 import { ThemedView } from "@/components/themed-view";
-import { Image, ScrollView, StyleSheet, View } from "react-native";
+import { Colors } from "@/constants/theme";
+import Feather from "@expo/vector-icons/Feather";
+import { Image, Pressable, ScrollView, StyleSheet, View } from "react-native";
 
 const trips = [
   {
@@ -16,7 +18,23 @@ const trips = [
 export default function HomeScreen() {
   return (
     <ThemedView style={styles.container}>
-      <ThemedText type="subtitle" style={{ fontSize: 22 }}>
+      <View style={{ marginTop: 50 }}>
+        <Pressable
+          style={styles.button}
+          onPress={() => console.log("Pressed!")}
+        >
+          <Feather name="plus" size={22} color="white" />
+          <ThemedText
+            style={{ marginLeft: 10, color: "white", textAlign: "center" }}
+          >
+            Start a New Packing List
+          </ThemedText>
+        </Pressable>
+      </View>
+      <ThemedText
+        type="subtitle"
+        style={{ fontSize: 18, marginTop: 30, marginLeft: 5 }}
+      >
         Your Trips
       </ThemedText>
       <ScrollView
@@ -49,15 +67,22 @@ export default function HomeScreen() {
 }
 
 const styles = StyleSheet.create({
+  button: {
+    backgroundColor: Colors.primary,
+    padding: 15,
+    borderRadius: 25,
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+  },
   scrollView: {
     padding: 5, // Space above the scroll view
-    marginTop: 5,
+    marginTop: 10,
   },
   container: {
     flex: 1, // Take up full screen
-    padding: 25, // Inner spacing
+    paddingHorizontal: 20, // Inner spacing
     overflow: "hidden",
-    // justifyContent: "center", // Vertical alignment
-    // alignItems: "center", // Horizontal alignment
   },
 });
