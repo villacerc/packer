@@ -11,6 +11,7 @@ export type ThemedTextProps = TextProps & {
     | "label"
     | "title"
     | "caption"
+    | "subtext"
     | "defaultBold"
     | "defaultSemiBold"
     | "link";
@@ -75,6 +76,12 @@ const typography = {
     lineHeight: 24,
     fontFamily: "Roboto_400Regular",
     colorToken: "textSecondary",
+  },
+  subtext: {
+    fontSize: 14,
+    lineHeight: 20,
+    fontFamily: "Roboto_400Regular",
+    colorToken: "textTertiary",
   },
   defaultSemiBold: {
     fontSize: 16,
