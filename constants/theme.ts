@@ -7,9 +7,11 @@ import { Platform } from "react-native";
 
 export const Colors = {
   primary: "#7a16e0",
+  primaryAlt: "#A78BFA",
   light: {
     text: "#11181C",
-    mutedText: "#8C8C8C",
+    textSecondary: "#64748B",
+    textTertiary: "#94A3B8",
     background: "#fff",
     cardBackground: "#fff",
     btnCircleBackground: "#fff",
@@ -20,7 +22,7 @@ export const Colors = {
   },
   dark: {
     text: "#ECEDEE",
-    mutedText: "#A78BFA",
+    textSecondary: "#94A3B8",
     background: "#0a0e1a",
     cardBackground: "#0f172a",
     btnCircleBackground: "#0F1123",

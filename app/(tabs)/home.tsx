@@ -32,7 +32,7 @@ export default function HomeScreen() {
         </Pressable>
       </View>
       <ThemedText
-        type="subtitle"
+        type="title"
         style={{ fontSize: 18, marginTop: 30, marginLeft: 5 }}
       >
         Your Trips
@@ -54,7 +54,11 @@ export default function HomeScreen() {
                   <ThemedText type="defaultBold">
                     {trips[0].destination}
                   </ThemedText>
-                  <ThemedText muted style={{ fontSize: 14 }}>
+                  <ThemedText
+                    type="caption"
+                    darkColor={Colors.primaryAlt}
+                    style={{ fontSize: 14 }}
+                  >
                     {trips[0].dates}
                   </ThemedText>
                 </View>
