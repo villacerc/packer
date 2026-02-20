@@ -8,6 +8,7 @@ export type ThemedTextProps = TextProps & {
   type?:
     | "default"
     | "heading"
+    | "label"
     | "title"
     | "caption"
     | "defaultBold"
@@ -23,20 +24,18 @@ export function ThemedText({
   ...rest
 }: ThemedTextProps) {
   const variant = typography[type];
-
+  const { colorToken, ...textStyles } = variant;
   const color = useThemeColor(
     { light: lightColor, dark: darkColor },
-    variant.colorToken as keyof typeof Colors.light & keyof typeof Colors.dark,
+    colorToken as keyof typeof Colors.light & keyof typeof Colors.dark,
   );
 
   return (
     <Text
       style={[
         {
+          ...textStyles,
           color,
-          fontSize: variant.fontSize,
-          lineHeight: variant.lineHeight,
-          fontFamily: variant.fontFamily,
         },
         style,
       ]}
@@ -63,6 +62,13 @@ const typography = {
     lineHeight: 24,
     fontFamily: "Roboto_700Bold",
     colorToken: "text",
+  },
+  label: {
+    fontSize: 16,
+    lineHeight: 20,
+    textTransform: "uppercase",
+    fontFamily: "Roboto_600SemiBold",
+    colorToken: "textSecondary",
   },
   caption: {
     fontSize: 16,

@@ -1,11 +1,12 @@
 import { ThemedButtonCircle } from "@/components/themed-button-circle";
 import { ThemedIcon } from "@/components/themed-icon";
 import { ThemedText } from "@/components/themed-text";
+import { ThemedTextInput } from "@/components/themed-text-input";
 import { ThemedView } from "@/components/themed-view";
 
 export default function NewTrip() {
   return (
-    <ThemedView style={{ flex: 1, paddingTop: 50 }}>
+    <ThemedView style={{ flex: 1, paddingTop: 50, paddingHorizontal: 20 }}>
       <ThemedView
         style={{
           position: "relative",
@@ -25,6 +26,13 @@ export default function NewTrip() {
         <ThemedText type="caption" style={{ marginTop: 10 }}>
           Fill in the details for your upcoming journey.
         </ThemedText>
+      </ThemedView>
+      <ThemedView style={{ marginTop: 35 }}>
+        <ThemedText type="label">Destination</ThemedText>
+        <ThemedTextInput
+          placeholder="e.g. Kyoto, Japan"
+          style={{ marginTop: 10 }}
+        />
       </ThemedView>
     </ThemedView>
   );
