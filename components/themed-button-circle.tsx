@@ -12,6 +12,7 @@ export function ThemedButtonCircle({ style, ...otherProps }: ViewProps) {
 
 const styles = StyleSheet.create({
   container: {
+    color: "#fff",
     width: 45,
     height: 45,
     borderRadius: 25,
