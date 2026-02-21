@@ -1,12 +1,18 @@
 import { Colors } from "@/constants/theme";
 import { useAppScheme } from "@/hooks/use-app-scheme";
-import { StyleSheet, View, type ViewProps } from "react-native";
+import { Pressable, StyleProp, StyleSheet, ViewStyle } from "react-native";
 
-export function ThemedButtonCircle({ style, ...otherProps }: ViewProps) {
+export function ThemedButtonCircle({
+  style,
+  ...otherProps
+}: React.ComponentProps<typeof Pressable>) {
   const { scheme } = useAppScheme();
   const themeStyles = scheme === "light" ? styles.light : styles.dark;
   return (
-    <View style={[styles.container, style, themeStyles]} {...otherProps} />
+    <Pressable
+      style={[styles.container, style, themeStyles] as StyleProp<ViewStyle>}
+      {...otherProps}
+    />
   );
 }
 

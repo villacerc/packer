@@ -1,5 +1,6 @@
 import { ButtonPrimary } from "@/components/button-primary";
 import { ThemedCard } from "@/components/themed-card";
+import { ThemedSafeAreaView } from "@/components/themed-safe-area-view";
 import { ThemedText } from "@/components/themed-text";
 import { ThemedView } from "@/components/themed-view";
 import { Colors } from "@/constants/theme";
@@ -20,50 +21,51 @@ export default function HomeScreen() {
   const router = useRouter();
 
   return (
-    <ThemedView style={styles.container}>
-      <View style={{ marginTop: 50 }}>
-        <ButtonPrimary
-          leftIcon={{ library: "feather", name: "plus" }}
-          label="Start a New Packing List"
-          onPress={() => router.push("/screens/newTrip")}
-        />
-      </View>
-      <ThemedText
-        type="title"
-        style={{ fontSize: 18, marginTop: 30, marginLeft: 5 }}
-      >
-        Your Trips
-      </ThemedText>
-      <ScrollView
-        style={styles.scrollView}
-        showsVerticalScrollIndicator={false}
-      >
-        {Array(10)
-          .fill("")
-          .map((_, index) => (
-            <ThemedCard key={index}>
-              <View style={{ flexDirection: "row", alignItems: "center" }}>
-                <Image
-                  source={require("@/assets/images/destination.png")}
-                  style={{ width: 65, height: 65, borderRadius: 100 }}
-                />
-                <View style={{ marginLeft: 20, flex: 1 }}>
-                  <ThemedText type="defaultBold">
-                    {trips[0].destination}
-                  </ThemedText>
-                  <ThemedText
-                    type="caption"
-                    darkColor={Colors.primaryAlt}
-                    style={{ fontSize: 14 }}
-                  >
-                    {trips[0].dates}
-                  </ThemedText>
+    <>
+      <ThemedSafeAreaView>
+        <View style={{ marginTop: 20 }}>
+          <ButtonPrimary
+            leftIcon={{ library: "feather", name: "plus" }}
+            label="Start a New Packing List"
+            onPress={() => router.push("/screens/newTrip")}
+          />
+        </View>
+      </ThemedSafeAreaView>
+      <ThemedView style={styles.container}>
+        <ThemedText type="title" style={{ fontSize: 18, marginLeft: 5 }}>
+          Your Trips
+        </ThemedText>
+        <ScrollView
+          style={styles.scrollView}
+          showsVerticalScrollIndicator={false}
+        >
+          {Array(10)
+            .fill("")
+            .map((_, index) => (
+              <ThemedCard key={index}>
+                <View style={{ flexDirection: "row", alignItems: "center" }}>
+                  <Image
+                    source={require("@/assets/images/destination.png")}
+                    style={{ width: 65, height: 65, borderRadius: 100 }}
+                  />
+                  <View style={{ marginLeft: 20, flex: 1 }}>
+                    <ThemedText type="defaultBold">
+                      {trips[0].destination}
+                    </ThemedText>
+                    <ThemedText
+                      type="caption"
+                      darkColor={Colors.primaryAlt}
+                      style={{ fontSize: 14 }}
+                    >
+                      {trips[0].dates}
+                    </ThemedText>
+                  </View>
                 </View>
-              </View>
-            </ThemedCard>
-          ))}
-      </ScrollView>
-    </ThemedView>
+              </ThemedCard>
+            ))}
+        </ScrollView>
+      </ThemedView>
+    </>
   );
 }
 
