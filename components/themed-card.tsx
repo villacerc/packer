@@ -2,7 +2,7 @@ import { Colors } from "@/constants/theme";
 import { useAppScheme } from "@/hooks/use-app-scheme";
 import { StyleSheet, View, type ViewProps } from "react-native";
 
-export type ThemedCardProps = ViewProps & {
+type ThemedCardProps = ViewProps & {
   lightColor?: string;
   darkColor?: string;
 };

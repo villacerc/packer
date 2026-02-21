@@ -5,7 +5,7 @@ import { type TextStyle } from "react-native";
 
 type IconLibrary = "feather" | "material";
 
-export type ThemedIconProps = {
+type ThemedIconProps = {
   name: string;
   size?: number;
   lightColor?: string;
