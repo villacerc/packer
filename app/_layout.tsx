@@ -34,7 +34,7 @@ export default function RootLayout() {
         }}
       >
         <Stack.Screen
-          name="modal"
+          name="modals/calendar"
           options={{ presentation: "modal", title: "Modal" }}
         />
       </Stack>

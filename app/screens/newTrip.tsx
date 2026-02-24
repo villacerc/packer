@@ -50,7 +50,16 @@ export default function NewTrip() {
           <ThemedText type="label">Travel Dates</ThemedText>
 
           <View style={{ marginTop: 10, flexDirection: "row", gap: 10 }}>
-            <ThemedTextInput style={{ flex: 1 }} placeholder="Start Date" />
+            <Pressable
+              style={{ flex: 1 }}
+              onPress={() => router.push("/modals/calendar")}
+            >
+              <ThemedTextInput
+                placeholder="Start Date"
+                editable={false}
+                pointerEvents="none"
+              />
+            </Pressable>
             <ThemedTextInput style={{ flex: 1 }} placeholder="End Date" />
           </View>
         </View>
