@@ -3,8 +3,8 @@
  * https://docs.expo.dev/guides/color-schemes/
  */
 
-import { Colors } from "@/constants/theme";
-import { useAppScheme } from "@/hooks/use-app-scheme";
+import { Colors } from "@/src/constants/theme";
+import { useAppScheme } from "@/src/hooks/use-app-scheme";
 
 export function useThemeColor(
   props: { light?: string; dark?: string },

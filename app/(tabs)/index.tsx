@@ -1,9 +1,9 @@
-import { ButtonPrimary } from "@/components/button-primary";
-import { ThemedCard } from "@/components/themed-card";
-import { ThemedSafeAreaView } from "@/components/themed-safe-area-view";
-import { ThemedText } from "@/components/themed-text";
-import { ThemedView } from "@/components/themed-view";
-import { Colors } from "@/constants/theme";
+import { ButtonPrimary } from "@/src/components/button-primary";
+import { ThemedCard } from "@/src/components/themed-card";
+import { ThemedSafeAreaView } from "@/src/components/themed-safe-area-view";
+import { ThemedText } from "@/src/components/themed-text";
+import { ThemedView } from "@/src/components/themed-view";
+import { Colors } from "@/src/constants/theme";
 import { useRouter } from "expo-router";
 import { Image, ScrollView, StyleSheet, View } from "react-native";
 
@@ -45,7 +45,7 @@ export default function HomeScreen() {
               <ThemedCard key={index}>
                 <View style={{ flexDirection: "row", alignItems: "center" }}>
                   <Image
-                    source={require("@/assets/images/destination.png")}
+                    source={require("@/src/assets/images/destination.png")}
                     style={{ width: 65, height: 65, borderRadius: 100 }}
                   />
                   <View style={{ marginLeft: 20, flex: 1 }}>

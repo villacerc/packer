@@ -1,4 +1,4 @@
-import { useThemeColor } from "@/hooks/use-theme-color";
+import { useThemeColor } from "@/src/hooks/use-theme-color";
 import { Feather, MaterialIcons } from "@expo/vector-icons";
 import React from "react";
 import { type TextStyle } from "react-native";

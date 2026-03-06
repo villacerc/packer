@@ -1,4 +1,4 @@
-import { ColorSchemeContext } from "@/context/color-scheme-context";
+import { ColorSchemeContext } from "@/src/context/color-scheme-context";
 import { useContext } from "react";
 
 export function useAppScheme() {

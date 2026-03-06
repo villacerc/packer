@@ -1,5 +1,5 @@
-import { ColorSchemeProvider } from "@/context/color-scheme-context";
-import { useAppScheme } from "@/hooks/use-app-scheme";
+import { ColorSchemeProvider } from "@/src/context/color-scheme-context";
+import { useAppScheme } from "@/src/hooks/use-app-scheme";
 import {
   Roboto_400Regular,
   Roboto_600SemiBold,

@@ -1,7 +1,7 @@
-import { HapticTab } from "@/components/haptic-tab";
-import { IconSymbol } from "@/components/ui/icon-symbol";
-import { Colors } from "@/constants/theme";
-import { useAppScheme } from "@/hooks/use-app-scheme";
+import { HapticTab } from "@/src/components/haptic-tab";
+import { IconSymbol } from "@/src/components/ui/icon-symbol";
+import { Colors } from "@/src/constants/theme";
+import { useAppScheme } from "@/src/hooks/use-app-scheme";
 import Feather from "@expo/vector-icons/Feather";
 import { Tabs } from "expo-router";
 import React from "react";

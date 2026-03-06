@@ -1,5 +1,5 @@
-import { Colors } from "@/constants/theme";
-import { useAppScheme } from "@/hooks/use-app-scheme";
+import { Colors } from "@/src/constants/theme";
+import { useAppScheme } from "@/src/hooks/use-app-scheme";
 import { StyleSheet, View, type ViewProps } from "react-native";
 
 type ThemedCardProps = ViewProps & {

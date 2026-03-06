@@ -1,10 +1,10 @@
-import { ButtonPrimary } from "@/components/button-primary";
-import { ThemedButtonCircle } from "@/components/themed-button-circle";
-import { ThemedIcon } from "@/components/themed-icon";
-import { ThemedSafeAreaView } from "@/components/themed-safe-area-view";
-import { ThemedText } from "@/components/themed-text";
-import { ThemedTextInput } from "@/components/themed-text-input";
-import { ThemedView } from "@/components/themed-view";
+import { ButtonPrimary } from "@/src/components/button-primary";
+import { ThemedButtonCircle } from "@/src/components/themed-button-circle";
+import { ThemedIcon } from "@/src/components/themed-icon";
+import { ThemedSafeAreaView } from "@/src/components/themed-safe-area-view";
+import { ThemedText } from "@/src/components/themed-text";
+import { ThemedTextInput } from "@/src/components/themed-text-input";
+import { ThemedView } from "@/src/components/themed-view";
 import { useRouter } from "expo-router";
 import { Image, Pressable, ScrollView, View } from "react-native";
 
@@ -76,7 +76,7 @@ export default function NewTrip() {
                 style={i < 4 ? { marginLeft: 20 } : { marginHorizontal: 20 }}
               >
                 <Image
-                  source={require("@/assets/images/destination.png")}
+                  source={require("@/src/assets/images/destination.png")}
                   style={{ width: 165, height: 200, borderRadius: 30 }}
                 />
                 <View style={{ marginLeft: 5, marginTop: 10 }}>

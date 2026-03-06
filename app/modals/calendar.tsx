@@ -1,9 +1,9 @@
-import { ThemedButtonCircle } from "@/components/themed-button-circle";
-import { ThemedIcon } from "@/components/themed-icon";
-import { ThemedText } from "@/components/themed-text";
-import { ThemedView } from "@/components/themed-view";
-import { Colors } from "@/constants/theme";
-import { useThemeColor } from "@/hooks/use-theme-color";
+import { ThemedButtonCircle } from "@/src/components/themed-button-circle";
+import { ThemedIcon } from "@/src/components/themed-icon";
+import { ThemedText } from "@/src/components/themed-text";
+import { ThemedView } from "@/src/components/themed-view";
+import { Colors } from "@/src/constants/theme";
+import { useThemeColor } from "@/src/hooks/use-theme-color";
 import { useRouter } from "expo-router";
 import { useEffect, useMemo, useState } from "react";
 import { StyleSheet, View } from "react-native";
