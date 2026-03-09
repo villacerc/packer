@@ -17,6 +17,7 @@ export default class PackingEngine {
 
   public generatePackingList(): PackingItem[] {
     const packingList: PackingItem[] = this.initializePackingList();
+    this.adjustItemQuantities(packingList);
     return packingList;
   }
 
@@ -25,6 +26,16 @@ export default class PackingEngine {
     for (const rule of this.rules) {
       if (rule.applies()) {
         packingList.push(...rule.getItems());
+      }
+    }
+    return packingList;
+  }
+
+  private adjustItemQuantities(packingList: PackingItem[]): PackingItem[] {
+    const maxCount = Math.min(this.trip.durationDays, 14);
+    for (const item of packingList) {
+      if (item.usage === "daily") {
+        item.quantity = maxCount;
       }
     }
     return packingList;

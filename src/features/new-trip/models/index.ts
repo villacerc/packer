@@ -1,6 +1,7 @@
 export class PackingItem {
   constructor(
     public name: string,
+    public usage: string = "occasional",
     public quantity: number = 1,
   ) {}
 }

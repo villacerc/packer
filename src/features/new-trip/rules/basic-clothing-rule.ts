@@ -6,8 +6,8 @@ export default class BasicClothingRule extends PackingRule {
     super(trip);
     this.items = [
       new PackingItem("light jacket"),
-      new PackingItem("underwear"),
-      new PackingItem("socks"),
+      new PackingItem("underwear", "daily"),
+      new PackingItem("socks", "daily"),
       new PackingItem("shoes"),
     ];
   }
@@ -18,7 +18,10 @@ export default class BasicClothingRule extends PackingRule {
 
   getItems() {
     if (!this.trip.isWarm()) {
-      this.items.push(new PackingItem("shirt"), new PackingItem("pants"));
+      this.items.push(
+        new PackingItem("shirt", "daily"),
+        new PackingItem("pants", "daily"),
+      );
     }
     return this.items;
   }
