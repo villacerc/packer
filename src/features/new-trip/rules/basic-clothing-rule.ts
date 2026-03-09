@@ -14,10 +14,11 @@ export default class BasicClothingRule extends PackingRule {
     const baseCount = Math.ceil(this.trip.durationDays);
 
     return [
-      new PackingItem("shirt", "clothing", baseCount, 3),
+      new PackingItem("shirt", "clothing", baseCount, 6),
       new PackingItem("pants", "clothing", baseCount, 9),
+      new PackingItem("light jacket", "clothing", 1, 9),
       new PackingItem("underwear", "clothing", baseCount, 9),
-      new PackingItem("shoes", "footwear", 1, 5),
+      new PackingItem("shoes", "footwear", 1, 9),
     ];
   }
 }

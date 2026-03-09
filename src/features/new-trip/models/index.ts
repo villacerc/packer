@@ -13,4 +13,10 @@ export class Trip {
     public durationDays: number,
     public temperatureC: number,
   ) {}
+  isCold(): boolean {
+    return this.temperatureC < 10;
+  }
+  isWarm(): boolean {
+    return this.temperatureC >= 20;
+  }
 }
