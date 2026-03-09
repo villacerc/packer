@@ -2,8 +2,12 @@ import { PackingItem, Trip } from "../models";
 import PackingRule from "./packing-rule";
 
 export default class HikingRule extends PackingRule {
-  applies(trip: Trip) {
-    return trip.activities.has("hiking");
+  constructor(trip: Trip) {
+    super(trip);
+  }
+
+  applies() {
+    return this.trip.activities.has("hiking");
   }
 
   items() {

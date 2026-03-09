@@ -1,6 +1,10 @@
 import { PackingItem, Trip } from "../models";
 
 export default abstract class PackingRule {
-  abstract applies(tripRequest: Trip): boolean;
+  protected trip: Trip;
+  constructor(trip: Trip) {
+    this.trip = trip;
+  }
+  abstract applies(): boolean;
   abstract items(): PackingItem[];
 }

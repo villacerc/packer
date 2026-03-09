@@ -2,7 +2,7 @@ export class PackingItem {
   constructor(
     public name: string,
     public category: string,
-    public base_quantity: number,
+    public quantity: number,
     public importance: number,
   ) {}
 }

@@ -3,15 +3,19 @@ import * as PackingRules from "../rules";
 import PackingRule from "../rules/packing-rule";
 
 export default class PackingEngine {
-  private rules: PackingRule[] = [
-    new PackingRules.BasicClothingRule(),
-    new PackingRules.HikingRule(),
-  ];
+  private rules: PackingRule[];
 
-  public generatePackingList(trip: Trip): PackingItem[] {
+  constructor(trip: Trip) {
+    this.rules = [
+      new PackingRules.BasicClothingRule(trip),
+      new PackingRules.HikingRule(trip),
+    ];
+  }
+
+  public generatePackingList(): PackingItem[] {
     const packingList: PackingItem[] = [];
     for (const rule of this.rules) {
-      if (rule.applies(trip)) {
+      if (rule.applies()) {
         packingList.push(...rule.items());
       }
     }
