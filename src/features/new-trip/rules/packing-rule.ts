@@ -1,5 +1,6 @@
-import { TripRequest } from "../types";
+import { PackingItem, Trip } from "../models";
 
 export default abstract class PackingRule {
-  abstract applies(tripRequest: TripRequest): boolean;
+  abstract applies(tripRequest: Trip): boolean;
+  abstract items(): PackingItem[];
 }
