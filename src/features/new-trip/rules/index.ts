@@ -1,5 +1,11 @@
-import BasicClothingRule from "./basic-clothing-rule";
+import EssentialClothingRule from "./essential-clothing-rule";
+import EssentialsRule from "./essentials-rule";
 import HikingRule from "./hiking-rule";
 import WarmTemperatureRule from "./warm-temperature-rule";
 
-export { BasicClothingRule, HikingRule, WarmTemperatureRule };
+export {
+  EssentialClothingRule,
+  EssentialsRule,
+  HikingRule,
+  WarmTemperatureRule,
+};

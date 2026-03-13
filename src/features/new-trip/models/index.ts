@@ -11,6 +11,7 @@ export class Trip {
     public activities: Set<string>,
     public durationDays: number,
     public temperatureC: number,
+    public luggageSize: string,
   ) {}
   isCold(): boolean {
     return this.temperatureC < 10;

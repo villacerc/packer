@@ -1,21 +1,21 @@
-import { PackingItem, Trip } from "../models";
+import { PackingItem } from "../models";
 import PackingRule from "./packing-rule";
 
 export default class ColdTemperatureRule extends PackingRule {
-  constructor(trip: Trip) {
-    super(trip);
-    this.items = [
-      new PackingItem("jacket"),
-      new PackingItem("gloves"),
-      new PackingItem("beanie"),
-    ];
-  }
-
   applies() {
     return this.trip.isCold();
   }
 
-  getItems() {
-    return this.items;
+  smallLuggageItems() {
+    return [
+      new PackingItem("jacket"),
+      new PackingItem("gloves"),
+      new PackingItem("beanie"),
+      new PackingItem("scarf"),
+    ];
+  }
+
+  mediumLuggageItems(): PackingItem[] {
+    return [];
   }
 }

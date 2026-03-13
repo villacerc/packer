@@ -9,7 +9,8 @@ export default class PackingEngine {
   constructor(trip: Trip) {
     this.trip = trip;
     this.rules = [
-      new PackingRules.BasicClothingRule(trip),
+      new PackingRules.EssentialsRule(trip),
+      new PackingRules.EssentialClothingRule(trip),
       new PackingRules.HikingRule(trip),
       new PackingRules.WarmTemperatureRule(trip),
     ];
